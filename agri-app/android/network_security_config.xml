@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  文件路径（放入 Android 离线打包项目）：
+  app/src/main/res/xml/network_security_config.xml
+
+  在 AndroidManifest.xml 中引用：
+  <application
+    android:networkSecurityConfig="@xml/network_security_config"
+    ...>
+
+  说明：
+  - 正式环境：删除 cleartextTrafficPermitted，改用 HTTPS
+  - 内网测试：保留此配置允许 HTTP
+-->
+<network-security-config>
+  <!-- 正式域名走 HTTPS，信任系统证书 -->
+  <domain-config cleartextTrafficPermitted="false">
+    <domain includeSubdomains="true">你的域名.com</domain>
+  </domain-config>
+
+  <!-- 内网/测试 IP 允许 HTTP（上线后删除这段） -->
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">192.168.1.0</domain>
+    <domain includeSubdomains="true">localhost</domain>
+  </domain-config>
+</network-security-config>

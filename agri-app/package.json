@@ -1,0 +1,23 @@
+{
+  "name": "agri-app",
+  "version": "1.0.0",
+  "description": "农资管理系统 APP",
+  "scripts": {
+    "dev:app-android": "uni --platform app-android",
+    "dev:app-ios":     "uni --platform app-ios",
+    "dev:h5":          "uni --platform h5",
+    "build:app-android": "uni build --platform app-android",
+    "build:app-ios":     "uni build --platform app-ios"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "^3.0.0",
+    "@dcloudio/uni-ui": "^1.4.28",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "*",
+    "@vue/tsconfig": "^0.4.0",
+    "typescript": "^5.2.0"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "name": "农资管家",
+  "appid": "__UNI__AGRI001",
+  "description": "农资进出库扫码管理系统",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+
+  "app-plus": {
+    "usingComponents": true,
+    "nvueStyleCompiler": "uni-compiler",
+    "compilerVersion": 3,
+    "compatible": { "ignoreVersion": true },
+    "splashscreen": {
+      "alwaysShowBeforeRender": true,
+      "waiting": true,
+      "autoclose": true,
+      "delay": 0
+    },
+    "modules": {
+      "Barcode": {}
+    },
+    "safearea": {
+      "background": "#1a5c2a",
+      "backgroundColorTop": "#1a5c2a",
+      "backgroundColorBottom": "#ffffff",
+      "bottom": { "offset": "none" }
+    },
+    "distribute": {
+      "android": {
+        "minSdkVersion": 21,
+        "targetSdkVersion": 33,
+        "abiFilters": ["armeabi-v7a", "arm64-v8a"],
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+          "<uses-feature android:name=\"android.hardware.camera\" android:required=\"true\"/>",
+          "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>"
+        ],
+        "icons": {
+          "hdpi":    "static/icons/icon-72.png",
+          "xhdpi":   "static/icons/icon-96.png",
+          "xxhdpi":  "static/icons/icon-144.png",
+          "xxxhdpi": "static/icons/icon-192.png"
+        }
+      },
+      "ios": {
+        "deploymentTarget": "13.0",
+        "urlscheme": "agrimanager",
+        "icons": {
+          "iphone": {
+            "app@2x":              "static/icons/icon-120.png",
+            "app@3x":              "static/icons/icon-180.png",
+            "spotlight@2x":        "static/icons/icon-80.png",
+            "spotlight@3x":        "static/icons/icon-120.png",
+            "settings@2x":         "static/icons/icon-58.png",
+            "settings@3x":         "static/icons/icon-87.png",
+            "notification@2x":     "static/icons/icon-40.png",
+            "notification@3x":     "static/icons/icon-60.png"
+          },
+          "ipad": {
+            "app":                 "static/icons/icon-76.png",
+            "app@2x":              "static/icons/icon-152.png",
+            "spotlight":           "static/icons/icon-40.png",
+            "spotlight@2x":        "static/icons/icon-80.png",
+            "settings":            "static/icons/icon-29.png",
+            "settings@2x":         "static/icons/icon-58.png",
+            "notification":        "static/icons/icon-20.png",
+            "notification@2x":     "static/icons/icon-40.png"
+          },
+          "appstore":              "static/icons/icon-1024.png"
+        },
+        "privacyDescription": {
+          "NSCameraUsageDescription":            "扫描商品条码需要使用摄像头",
+          "NSPhotoLibraryUsageDescription":      "保存条码图片需要访问相册",
+          "NSPhotoLibraryAddUsageDescription":   "保存条码图片需要写入相册",
+          "NSMicrophoneUsageDescription":        "该应用不使用麦克风",
+          "NSLocalNetworkUsageDescription":      "连接局域网内服务器需要本地网络权限",
+          "NSFaceIDUsageDescription":            "使用Face ID快速登录"
+        },
+        "capabilities": {
+          "entitlements": {}
+        },
+        "UIBackgroundModes": [],
+        "UIRequiredDeviceCapabilities": ["armv7"],
+        "UISupportedInterfaceOrientations": [
+          "UIInterfaceOrientationPortrait"
+        ],
+        "UISupportedInterfaceOrientations~ipad": [
+          "UIInterfaceOrientationPortrait",
+          "UIInterfaceOrientationLandscapeLeft",
+          "UIInterfaceOrientationLandscapeRight"
+        ]
+      },
+      "google": { "packagename": "com.agri.manager" },
+      "apple":  {
+        "bundleid": "com.agri.manager",
+        "appid": ""
+      }
+    }
+  },
+
+  "h5": {
+    "devServer": { "port": 5173, "disableHostCheck": true },
+    "router": { "mode": "history", "base": "/" },
+    "title": "农资管家"
+  }
+}

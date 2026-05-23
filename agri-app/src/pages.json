@@ -1,0 +1,35 @@
+{
+  "pages": [
+    { "path": "pages/auth/login",       "style": { "navigationBarTitleText": "", "navigationStyle": "custom", "app-plus": { "titleNView": false, "bounce": "none", "backgroundColorTop": "#1a5c2a" } } },
+    { "path": "pages/dashboard/index",  "style": { "navigationBarTitleText": "农资管家",    "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none" } } },
+    { "path": "pages/scan/index",       "style": { "navigationBarTitleText": "扫码入/出库", "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none", "softinputMode": "adjustResize" } } },
+    { "path": "pages/inventory/index",  "style": { "navigationBarTitleText": "库存管理",    "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none" } } },
+    { "path": "pages/inventory/detail", "style": { "navigationBarTitleText": "商品详情",    "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none" } } },
+    { "path": "pages/inventory/add",    "style": { "navigationBarTitleText": "新增/编辑商品","navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none", "softinputMode": "adjustResize" } } },
+    { "path": "pages/records/index",    "style": { "navigationBarTitleText": "出入库记录",  "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none" } } },
+    { "path": "pages/supplier/index",   "style": { "navigationBarTitleText": "供应商管理",  "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none", "softinputMode": "adjustResize" } } },
+    { "path": "pages/profile/index",    "style": { "navigationBarTitleText": "我的",        "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none" } } },
+    { "path": "pages/users/index",     "style": { "navigationBarTitleText": "员工管理",     "navigationBarBackgroundColor": "#1a5c2a", "navigationBarTextStyle": "white", "app-plus": { "bounce": "none", "softinputMode": "adjustResize" } } }
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1a5c2a",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "blurEffect": "light",
+    "list": [
+      { "pagePath": "pages/dashboard/index", "text": "首页",  "iconPath": "static/tabbar/home.png",      "selectedIconPath": "static/tabbar/home-active.png" },
+      { "pagePath": "pages/scan/index",      "text": "扫码",  "iconPath": "static/tabbar/scan.png",      "selectedIconPath": "static/tabbar/scan-active.png" },
+      { "pagePath": "pages/inventory/index", "text": "库存",  "iconPath": "static/tabbar/inventory.png", "selectedIconPath": "static/tabbar/inventory-active.png" },
+      { "pagePath": "pages/records/index",   "text": "记录",  "iconPath": "static/tabbar/record.png",    "selectedIconPath": "static/tabbar/record-active.png" },
+      { "pagePath": "pages/profile/index",   "text": "我的",  "iconPath": "static/tabbar/profile.png",   "selectedIconPath": "static/tabbar/profile-active.png" }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "农资管家",
+    "navigationBarBackgroundColor": "#1a5c2a",
+    "backgroundColor": "#f0f2f0",
+    "app-plus": { "bounce": "none", "scrollIndicator": "none" }
+  }
+}

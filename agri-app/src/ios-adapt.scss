@@ -1,0 +1,96 @@
+/* ============================================================
+   iOS 专属适配样式
+   导入方式: @import './ios-adapt.scss'; 加在 app.scss 末尾
+   ============================================================ */
+
+/* ── 安全区适配（刘海屏 / 灵动岛） ─────────────────────── */
+.safe-bottom {
+  /* 固定高度兜底 */
+  height: 34px;
+  /* iOS 动态安全区 */
+  height: constant(safe-area-inset-bottom);
+  height: env(safe-area-inset-bottom);
+  min-height: 20px;
+}
+
+/* TabBar 底部安全区已由 pages.json 配置，此处针对自定义导航 */
+.fixed-bottom-safe {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ── 顶部状态栏适配（自定义 NavigationBar 时） ─────────── */
+.custom-nav-bar {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+/* ── iOS 字体渲染优化 ─────────────────────────────────── */
+/* #ifdef APP-PLUS */
+page {
+  font-family: -apple-system, 'SF Pro Display', 'SF Pro Text',
+               'PingFang SC', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+/* #endif */
+
+/* ── iOS 按钮去除默认样式 ─────────────────────────────── */
+button {
+  -webkit-appearance: none;
+}
+button::after {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* ── iOS input 光标颜色 ───────────────────────────────── */
+input, textarea {
+  caret-color: var(--green);
+}
+
+/* ── iOS 圆角更大（符合 iOS HIG 规范） ────────────────── */
+/* #ifdef APP-PLUS */
+.card {
+  border-radius: 16px;
+}
+.btn {
+  border-radius: 12px;
+}
+/* #endif */
+
+/* ── iOS 滚动回弹 ─────────────────────────────────────── */
+scroll-view {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── iOS 列表按压态 ──────────────────────────────────── */
+.list-item:active,
+.nav-item:active,
+.quick-item:active {
+  opacity: 0.6;
+  transition: opacity 0.1s;
+}
+
+/* ── iPhone SE / 小屏适配（375rpx 以下） ─────────────── */
+@media screen and (max-width: 375px) {
+  .product-name  { font-size: 30rpx !important; }
+  .stock-big     { font-size: 64rpx !important; }
+  .banner-name   { font-size: 34rpx !important; }
+  .stat-num      { font-size: 32rpx !important; }
+}
+
+/* ── iPad 适配（宽屏两列布局） ────────────────────────── */
+@media screen and (min-width: 768px) {
+  .card-grid,
+  .scan-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .stat-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}

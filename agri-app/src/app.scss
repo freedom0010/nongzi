@@ -1,0 +1,153 @@
+/* ====================================================
+   农资管家 全局样式
+   ==================================================== */
+
+/* CSS 变量 */
+page {
+  --green:       #1a5c2a;
+  --green-mid:   #2e7d32;
+  --green-light: #e8f5e9;
+  --amber:       #f57c00;
+  --amber-light: #fff3e0;
+  --red:         #c62828;
+  --red-light:   #ffebee;
+  --blue:        #1565c0;
+  --blue-light:  #e3f2fd;
+  --gray-bg:     #f0f2f0;
+  --gray-card:   #f5f5f5;
+  --border:      #e0e0e0;
+  --text:        #212121;
+  --text2:       #616161;
+  --text3:       #9e9e9e;
+  --white:       #ffffff;
+  --radius-sm:   8rpx;
+  --radius-md:   16rpx;
+  --radius-lg:   24rpx;
+  --shadow:      0 2rpx 16rpx rgba(0,0,0,0.08);
+}
+
+/* 重置 */
+view, text, input, button, image, scroll-view {
+  box-sizing: border-box;
+}
+
+/* 页面容器 */
+.page-container {
+  min-height: 100vh;
+  background: var(--gray-bg);
+  padding-bottom: 120rpx;
+}
+
+/* 卡片 */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  margin: 24rpx 24rpx 0;
+  box-shadow: var(--shadow);
+}
+.card-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 按钮 */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: var(--radius-md);
+  font-size: 30rpx;
+  font-weight: 600;
+  border: none;
+  padding: 0 40rpx;
+}
+.btn::after { border: none; }
+.btn-green  { background: var(--green);  color: #fff; }
+.btn-amber  { background: var(--amber);  color: #fff; }
+.btn-red    { background: var(--red);    color: #fff; }
+.btn-ghost  { background: var(--gray-card); color: var(--text2); }
+.btn-outline {
+  background: transparent;
+  border: 2rpx solid var(--green);
+  color: var(--green);
+}
+.btn-sm { height: 64rpx; font-size: 26rpx; padding: 0 24rpx; }
+.btn-block { width: 100%; }
+
+/* 输入框 */
+.input-box {
+  background: var(--gray-card);
+  border-radius: var(--radius-md);
+  padding: 24rpx 28rpx;
+  font-size: 30rpx;
+  color: var(--text);
+  border: 2rpx solid transparent;
+}
+.input-box:focus { border-color: var(--green); }
+
+/* 标签 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4rpx 16rpx;
+  border-radius: 40rpx;
+  font-size: 22rpx;
+  font-weight: 600;
+}
+.badge-in      { background: var(--green-light); color: var(--green-mid); }
+.badge-out     { background: var(--amber-light);  color: var(--amber); }
+.badge-warn    { background: var(--red-light);    color: var(--red); }
+.badge-ok      { background: var(--green-light);  color: var(--green-mid); }
+.badge-gray    { background: var(--gray-card);    color: var(--text2); }
+
+/* 分隔线 */
+.divider { height: 1rpx; background: var(--border); margin: 16rpx 0; }
+
+/* 空状态 */
+.empty-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 40rpx;
+  color: var(--text3);
+  font-size: 28rpx;
+}
+
+/* 列表项 */
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid var(--border);
+}
+.list-item:last-child { border-bottom: none; }
+
+/* 表单项 */
+.form-item {
+  margin-bottom: 32rpx;
+}
+.form-label {
+  font-size: 26rpx;
+  color: var(--text2);
+  margin-bottom: 12rpx;
+  font-weight: 500;
+}
+.form-required::before {
+  content: '* ';
+  color: var(--red);
+}
+
+/* 安全区 */
+.safe-bottom { height: env(safe-area-inset-bottom); }
+
+/* iOS 专属适配（自动识别平台生效） */
+/* #ifdef APP-PLUS */
+@import './ios-adapt.scss';
+/* #endif */
